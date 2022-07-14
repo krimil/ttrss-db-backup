@@ -1,10 +1,12 @@
-FROM ubuntu:18.04
+FROM alpine:latest
 
-RUN apt-get update && \
-    apt-get -qy full-upgrade && \
-    apt-get install -qy curl && \
-    apt-get install -qy gzip && \
-    curl -sSL https://get.docker.com/ | sh
+# install sqlite, curl, bash (for script)
+RUN apk add --no-cache \
+    curl \
+    bash \
+    openssl \
+    tzdata \
+    docker
 
 # copy backup script to crond daily folder
 COPY backup-db.sh /
