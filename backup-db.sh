@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd ~/ttrss-docker
+cd /ttrss-docker
 source .env
 docker compose exec ttrss-db /bin/bash \
   -c "export PGPASSWORD=$TTRSS_DB_PASS \
