@@ -7,7 +7,8 @@ RUN apk add --no-cache \
     openssl \
     tzdata \
     docker \
-    docker-compose
+    docker-compose \
+    rclone
 
 # copy backup script to crond daily folder
 COPY backup-db.sh /
